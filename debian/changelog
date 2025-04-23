@@ -1,5 +1,81 @@
-template-repository (1.0-1) unstable; urgency=medium
+collada-dom (2.5.0+ds1-3) unstable; urgency=medium
 
-  * Initial release
+  * Source only upload for migration to testing.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Leopold Palomo-Avellaneda <leo@alaxarxa.net>  Sat, 29 Jan 2022 19:15:39 +0100
+
+collada-dom (2.5.0+ds1-2) unstable; urgency=medium
+
+  * Change Build dependency. pcre3 -> liburiparser (Closes: #1000098)
+
+ -- Leopold Palomo-Avellaneda <leo@alaxarxa.net>  Fri, 28 Jan 2022 14:23:22 +0100
+
+collada-dom (2.5.0+ds1-1) unstable; urgency=medium
+
+  * Uploaded version to unstable.
+  * Transition initiated to collada-dom 2.5
+
+ -- Leopold Palomo-Avellaneda <leo@alaxarxa.net>  Sun, 15 Mar 2020 18:26:18 +0100
+
+collada-dom (2.5.0+ds1-1~exp1) experimental; urgency=medium
+
+  [ Wookey ]
+  * New upstream release - remove supreceeded patches
+  * New upstream version 2.5.0+ds1
+  * Update packaging for 2.5.0, dh 12 and standards 4.5.0
+  * Update changelog date for release
+  * Update VCS URLs for move to salsa.d.o
+  * Enable multiarch paths and metadata
+  * Bumped standards version to 4.5.0: Added Rules-Requires-Root
+  * Move to debhelper-compat 12: remove dh --parallel use dh_missing
+  * Remove gzipped nonfree test files (.dae.gz) from source
+  * Update watch file to v4
+  * Lintian fixups
+
+  [ Jelmer Vernooij ]
+  * Use secure copyright file specification URI.
+  * Trim trailing whitespace.
+  * Don't specify --with=quilt, since package uses '3.0 (quilt)' source
+    format.
+
+  [ Leopold Palomo-Avellaneda ]
+  * Fix missing section in package
+  * Simplified rules
+  * Drop ${shlibs:Depends} is not defined in -dev
+  * Added salsa ci yaml file
+  * Added patch to fix FTBFS on kfreebsd. Closes: #908664
+  * Added new package libcollada-dom-dev to make a migration
+  * Renamed packages
+  * Deleted trailing whitespace
+  * Fix mistake renaming the package
+
+ -- Leopold Palomo-Avellaneda <leo@alaxarxa.net>  Wed, 05 Feb 2020 08:04:08 +0100
+
+collada-dom (2.4.4+ds1-2) unstable; urgency=medium
+
+  * Add patch to solve return type. (Closes: #811658)
+  * Update patches
+  * Reformat patch to follow gbp-pq. Wookey authorship
+  * Update VCS-* fields to avoid uses-insecure-uri
+  * Bumped Standards-Version to 3.9.8. No changes
+
+ -- Leopold Palomo-Avellaneda <leo@alaxarxa.net>  Thu, 30 Jun 2016 08:14:19 +0200
+
+collada-dom (2.4.4+ds1-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Add liburiparser-dev.
+  * Increase debhelper compat to 9
+  * Added Wookey Copyright to the debian dir
+  * Added parallel build
+  * Fixed Lintian warnings in copyright file
+
+ -- Leopold Palomo-Avellaneda <leo@alaxarxa.net>  Tue, 17 Nov 2015 00:24:09 +0100
+
+collada-dom (2.4.3+ds2-1.1) unstable; urgency=low
+
+  [ Leopold Palomo-Avellaneda ]
+  * Initial release,  (Closes: #589152).
+  * Using the Rosen Diankov version. It's maintained.
+
+ -- Wookey <wookey@debian.org>  Tue, 13 Oct 2015 04:41:37 +0100
