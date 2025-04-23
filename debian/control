@@ -1,15 +1,51 @@
-Source: template-repository
-Section: unknown
+Source: collada-dom
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Section: science
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Uploaders: Jochen Sprickerhof <jspricke@debian.org>,
+           Leopold Palomo-Avellaneda <leo@alaxarxa.net>,
+	   Rosen Diankov <rosen.diankov@gmail.com>,
+	   Wookey <wookey@debian.org>
+Build-Depends: debhelper-compat (= 12), cmake, libxml2-dev,
+ libboost-dev, zlib1g-dev, libboost-filesystem-dev, libboost-system-dev,
+ pkg-config, libminizip-dev, liburiparser-dev
+Standards-Version: 4.5.0
+Rules-Requires-Root: no
+Homepage: https://github.com/rdiankov/collada-dom
+Vcs-Git: https://salsa.debian.org/science-team/collada-dom.git
+Vcs-Browser: https://salsa.debian.org/science-team/collada-dom
 
-Package: template-repository
+Package: libcollada-dom2.5-dp0
 Architecture: any
+Multi-Arch: same
+Section: libs
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Suggests: libbullet2
+Description: collada-dom 2.5.0  - COLLADA using double precision
+ The COLLADA Document Object Model (DOM) is an application programming
+ interface (API) that provides a C++ object representation of a COLLADA XML
+ instance document.
+
+Package: libcollada-dom-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: ${misc:Depends}, libcollada-dom2.5-dp0 (=${binary:Version})
+Replaces: libcollada-dom2.4-dp-dev (<< 2.4.4+ds1-2~)
+Breaks: libcollada-dom2.4-dp-dev (<< 2.4.4+ds1-2~)
+Suggests: libbullet2-dev
+Description: collada-dom 2.5.0 C++ headers and build tools
+ The COLLADA Document Object Model (DOM) is an application programming
+ interface (API) that provides a C++ object representation of a COLLADA XML
+ instance document.
+ .
+ This package contains C++ headers and build tools. The library is built using
+ double precision.
+
+Package: libcollada-dom2.4-dp-dev
+Architecture: all
+Section: oldlibs
+Depends: libcollada-dom-dev, ${misc:Depends}
+Description: Transitional package
+ This is a transitional package. It can safely be removed. The package name
+ has been changed from libcollada-dom2.4-dp-dev to libcollada-dom-dev.
